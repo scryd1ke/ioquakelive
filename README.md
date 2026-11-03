@@ -1,3 +1,27 @@
+# Fork de scryd1ke
+
+> Este es un **fork** de [foressssst/ioquakelive](https://github.com/foressssst/ioquakelive) que se usa para **proponer arreglos** al proyecto original. Para jugar, descarga la versión oficial desde [Releases](https://github.com/foressssst/ioquakelive/releases) del proyecto original.
+
+Cada arreglo va en **su propia rama**, sale de la versión más reciente de `main` del proyecto original y se envía con su propio pull request. Así cada cambio se puede revisar, aceptar o rechazar por separado.
+
+## Ramas de este fork
+
+| Rama | Para quién | Qué arregla | Pull request |
+|---|---|---|---|
+| [`fix/browser-columnas`](https://github.com/scryd1ke/ioquakelive/tree/fix/browser-columnas) | Todos los que usan el Match Browser | Las columnas **Players** y **Ping** ya no se salen del recuadro cuando un servidor tiene muchos tags. Agrega un botón **Stop** para detener el escaneo de servidores sin esperar a que termine. | [#11](https://github.com/foressssst/ioquakelive/pull/11) |
+| [`fix/steam-connect-juego-abierto`](https://github.com/scryd1ke/ioquakelive/tree/fix/steam-connect-juego-abierto) | Quienes entran a servidores desde **[ql.syncore.org](https://ql.syncore.org)** o con "Unirse a la partida" de Steam | Con el juego **ya abierto**, los enlaces `steam://connect/IP:puerto` no hacían nada. Ahora el juego recibe el aviso de Steam (`GameServerChangeRequested`) y se conecta al servidor, como el Quake Live original. | [#12](https://github.com/foressssst/ioquakelive/pull/12) |
+
+## Cómo se trabaja en este fork
+
+1. La rama nueva sale de `main` del proyecto original, nunca de otra rama de arreglo.
+2. Cada rama lleva un commit por cambio, con el problema, la causa y el arreglo explicados en el mensaje.
+3. Antes de enviarse, se compila en Windows x64 y x86 y se prueba en el juego.
+4. Se envía con un pull request a [foressssst/ioquakelive](https://github.com/foressssst/ioquakelive). La decisión de incluirlo es del proyecto original.
+
+---
+
+*Abajo sigue el README original del proyecto.*
+
 # ioquakelive
 
 Una implementación de código abierto de Quake Live, desarrollada por el equipo de [Quake Club](https://quakeclub.com). Reproduce la última versión original del juego (1069) sobre el motor [ioquake3](https://ioquake3.org/), incorporando mejoras propias y manteniendo la compatibilidad con el juego original.
