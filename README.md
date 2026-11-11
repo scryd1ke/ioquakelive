@@ -1,3 +1,30 @@
+# Fork de scryd1ke
+
+> Este es un **fork** de [foressssst/ioquakelive](https://github.com/foressssst/ioquakelive) que se usa para **proponer arreglos** al proyecto original. Para jugar, descarga la versión oficial desde [Releases](https://github.com/foressssst/ioquakelive/releases) del proyecto original.
+
+Cada arreglo va en **su propia rama**, sale de la versión más reciente de `main` del proyecto original y se envía con su propio pull request. Así cada cambio se puede revisar, aceptar o rechazar por separado.
+
+## Ramas de este fork
+
+| Rama | Para quién | Qué arregla | Pull request |
+|---|---|---|---|
+| [`fix/browser-columnas`](https://github.com/scryd1ke/ioquakelive/tree/fix/browser-columnas) | Todos los que usan el Match Browser | Las columnas **Players** y **Ping** ya no se salen del recuadro cuando un servidor tiene muchos tags. Agrega un botón **Stop** para detener el escaneo de servidores sin esperar a que termine. | [#11](https://github.com/foressssst/ioquakelive/pull/11) ✅ aceptado en [v2.0.1](https://github.com/foressssst/ioquakelive/releases/tag/v2.0.1) |
+| [`fix/steam-connect-juego-abierto`](https://github.com/scryd1ke/ioquakelive/tree/fix/steam-connect-juego-abierto) | Quienes entran a servidores desde **[ql.syncore.org](https://ql.syncore.org)** o con "Unirse a la partida" de Steam | Con el juego **ya abierto**, los enlaces `steam://connect/IP:puerto` no hacían nada. Ahora el juego recibe el aviso de Steam (`GameServerChangeRequested`) y se conecta al servidor, como el Quake Live original. | [#12](https://github.com/foressssst/ioquakelive/pull/12) ✅ aceptado en [v2.0.1](https://github.com/foressssst/ioquakelive/releases/tag/v2.0.1) |
+| [`fix/icono-conexion-picmip`](https://github.com/scryd1ke/ioquakelive/tree/fix/icono-conexion-picmip) | Quienes juegan con `r_picmip` alto (lo normal en competitivo) | El ícono de pérdida de conexión (abajo a la derecha) se veía como un **cuadro azul liso**. Ahora se carga sin `r_picmip`, como los demás íconos del HUD, y se ve el cable de red. | [#13](https://github.com/foressssst/ioquakelive/pull/13) ✅ aceptado en [v2.0.1](https://github.com/foressssst/ioquakelive/releases/tag/v2.0.1) |
+| [`fix/hud-kick-y-avisos`](https://github.com/scryd1ke/ioquakelive/tree/fix/hud-kick-y-avisos) | Todos | **Vote to Kick** del menú inicia la votación, avisos al guardar screenshot y demo, y **Toggle Mute** con aviso. | [#14](https://github.com/foressssst/ioquakelive/pull/14) ✅ aceptado en v2.1.0 |
+| [`fix/priv-y-fuentes`](https://github.com/scryd1ke/ioquakelive/tree/fix/priv-y-fuentes) | Admins y jugadores con nombres en chino, japonés, coreano o emoji | El servidor manda `priv` también al entrar (se habilita el menú de admin) y fuentes de reserva para esos nombres. | [#15](https://github.com/foressssst/ioquakelive/pull/15) ✅ aceptado en v2.1.0 |
+
+## Cómo se trabaja en este fork
+
+1. La rama nueva sale de `main` del proyecto original, nunca de otra rama de arreglo.
+2. Cada rama lleva un commit por cambio, con el problema, la causa y el arreglo explicados en el mensaje.
+3. Antes de enviarse, se compila en Windows x64 y x86 y se prueba en el juego.
+4. Se envía con un pull request a [foressssst/ioquakelive](https://github.com/foressssst/ioquakelive). La decisión de incluirlo es del proyecto original.
+
+---
+
+*Abajo sigue el README original del proyecto.*
+
 <p align="center">
   <img src="misc/ioquakelive.png" width="128" alt="ioquakelive">
 </p>
